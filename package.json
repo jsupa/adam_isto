@@ -1,0 +1,26 @@
+{
+  "name": "ezaltz-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pug": "pug3 -P ./src/index.pug --out ./dist",
+    "tailwind:build": "postcss style/tailwind.css -o src/dist/style.css",
+    "build": "npm run pug & npm run tailwind:build",
+    "dev": "concurrently --kill-others \"postcss ./style/tailwind.css -w -o ./dist/css/style.css\" \"pug3 -P --watch ./src/index.pug --out ./dist\" \"http-server dist -p 1337 -c-1\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tokilabs/pug3-cli": "^3.0.1",
+    "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "preline": "^2.0.3",
+    "tailwindcss": "^3.4.1"
+  }
+}
